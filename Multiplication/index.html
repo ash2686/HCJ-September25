@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Multiplication Table</title>
+</head>
+<body>
+<div class="main-container">
+    <div class="title">
+            <h1>Multiplication Table Extractor</h1>
+            <p>Enter a NUMBER to get its Multiplication table </p>
+    </div>
+
+    <div class="game-number">
+            <input id = "g-number" type="text" autocomplete="off">
+    </div>
+
+    <div class="display-area">
+        <div class="prev-table">
+            <p id = "p-table">Previous number table</p>
+            <div class="prev-display">
+
+            </div>
+        </div>
+        <div class="current-table">
+            <p id="c-table">This number table</p>
+            <div class="current-display">
+                <!-- <p>3 multiplied by 1 is - 3</p>
+                <p>3 multiplied by 1 is - 3</p>
+                <p>3 multiplied by 1 is - 3</p>
+                <p>3 multiplied by 1 is - 3</p>
+                <p>3 multiplied by 1 is - 3</p>
+                <p>3 multiplied by 1 is - 3</p>
+                <p>3 multiplied by 1 is - 3</p>
+                <p>3 multiplied by 1 is - 3</p>
+                <p>3 multiplied by 1 is - 3</p>
+                <p>3 multiplied by 1 is - 3</p> -->
+            </div>
+        </div>
+        <div class="next-table">
+            <p id="n-table">Next number table</p>
+            <div class="next-display">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="game-buttons">
+            <div class="c-button">
+                <button onclick="clearGame()" class="clear-screen">Clear Screen</button>
+            </div>
+
+            <div class="g-button">
+                <button onclick="generateTable" class="generate-table">Generate Table</button>
+            </div>
+          
+    </div>
+</div>
+<script src="script.js"></script>    
+</body>
+</html>

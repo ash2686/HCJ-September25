@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper, .lower{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+
+    /* border: 1px solid red; */
+}
+
+.block-1,.block-2,.block-3,.block-4{
+    width: 50%;
+    height: 100%;
+    border: .1px solid black;
+}
+
+.block-1{
+    background-color: red;
+}
+
+.block-2{
+    background-color: blue;
+}
+
+.block-3{
+    background-color: green;
+}
+
+.block-4{
+    background-color: yellow;
+}

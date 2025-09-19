@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vanilla JS Notes App</title> 
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+  <div class="app" role="application" aria-label="Notes app">
+    <header>
+      <h1>Notes — Vanilla JS</h1>
+      <div class="controls">
+        <div class="search" aria-hidden>
+          <input id="search" placeholder="Search notes (title or body)..." autocomplete="off" />
+        </div>
+        <button id="exportBtn" class="btn" title="Export notes">Export</button>
+      </div>
+    </header>
+
+    <aside class="sidebar" aria-label="Notes list">
+      <div class="new-note">
+        <input id="quickTitle" placeholder="New note title..." />
+        <button id="addBtn" class="btn">Add</button>
+      </div>
+      <div class="meta">
+        <div class="small" id="count">0 notes</div>
+        <div style="flex:1"></div>
+        <select id="sort" aria-label="Sort notes" class="muted" title="Sort">
+          <option value="new">Newest</option>
+          <option value="old">Oldest</option>
+          <option value="alpha">A → Z</option>
+        </select>
+      </div>
+
+      <div class="list" id="notesList" tabindex="0" aria-live="polite"></div>
+    </aside>
+
+    <main class="editor" aria-label="Editor">
+      <input id="noteTitle" class="title-input" placeholder="Pick or create a note..." />
+      <textarea id="noteBody" class="body-input" placeholder="Write your note here..."></textarea>
+
+      <div class="meta-row">
+        <div class="small">Last saved: <span id="lastSaved">Never</span></div>
+        <div class="row">
+          <button id="saveBtn" class="icon-btn">Save</button>
+          <button id="deleteBtn" class="icon-btn danger">Delete</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Clock App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="title">
+            <h1>Stop Clock</h1>
+            <p>using</p>
+            <h1>Vanilla JavaScript</h1>
+        </div>
+
+        <div class="clock-display"> 
+            <div id="clock-face">
+            </div>
+            <div id="logged-time">
+                <p>Logged time -| </p>
+            </div>
+        </div>
+
+        <div class="clock-buttons">   
+            <div class="b-block main-block">  
+            <button id="stop-clock" onclick="funcStop()">STOP</button>
+            <button id="start-clock" onclick="funcStart()">START</button>
+            <button id="reset-clock" onclick="funcReset()">RESET</button>
+            </div>
+
+            <div class="b-block log-button">
+                <button id="log-time" onclick="funcLog()">
+                    LOG TIME
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+<script src="script.js"></script>
+</body>
+</html>

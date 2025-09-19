@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Script Quiz Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="main-container">
+        <div class="quiz-header">
+            <div class="start-button">
+                    <button id="start-quiz" onclick="startQuiz()">Start Quiz</button>
+            </div>
+        <div class="game-header">
+            <h1>JavaScript Quiz Game</h1>
+            <p>Take the Quiz of 15 questions to know you JavaScript knowledge</p>
+        </div>
+            <div class="quiz-score">
+                <!-- <h3>Score</h3> -->
+                 <div class="score-circle">
+                     <h2><span id="game-score">0</span><span class="score-text"">Correct</span></h2>
+                      <p id="score-line">SCORE</p>
+                     <h2><span id="question-number">0</span><span class="score-text">Questions</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-screen">
+            <div class="game-block">
+                    <div class="question-block">
+                        <h5 id="question"></h5>
+                        <!-- <p id="question-type"></p> -->
+                    </div>
+                    <div class="options">
+                        <div class="options-top">
+                            <div class="answers answer-1"></div>
+                            <div class="answers answer-2"></div>
+                        </div>
+                        <div class="options-bottom">
+                            <div class="answers answer-3"></div>
+                            <div class="answers answer-4"></div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="question-hint">
+                <div id="q-hint" onclick="qHint()">Click for Hint</div>
+                <!-- <button onclick="finalScreen(15,15)">Final</button> -->
+        </div>
+
+        <div class="game-buttons">
+            <button id="next-question" onclick="nextQuestion()">Next Question</button>
+        </div>
+    </div>
+ 
+<script src="script.js"></script>
+</body>
+</html>

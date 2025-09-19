@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-clock{
+    width: 40rem;
+    height: 40rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-clock .clock-circle{
+    width: 90%;
+    height: 90%;
+    border: 3px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-circle .center{
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+}
+
+.center .seconds{
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ width: 1px;
+ height: 15rem;
+ border: 1px solid black;
+ /* transform: translateY(-15rem); */
+ 
+}
+

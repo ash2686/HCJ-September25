@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.main-display{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-display .row-block{
+    width: 100%;
+    height: 10%;
+    /* background-color: yellow; */
+     display: flex;
+    flex-direction: row;
+}
+
+.row-block .grid-column{
+    width: 10%;
+    height: 100%;
+    border: 1px solid black;
+    /* background-color: red; */
+   
+}

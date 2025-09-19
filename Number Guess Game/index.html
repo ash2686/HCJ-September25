@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Guess the Number</title>
+</head>
+<body>
+        <div class="main-container">
+            <div class="title">
+                <h1>Guess the Number between 1-100</h1>
+                <p>When the start button is pressed, a random number is chosen between 1 and 100, you enter a guess, game will tell you if you are above or below the guess, lets see how many guesses it takes you to get the number.</p>
+            </div>
+
+            <div class="display-area">
+                <button onclick ="newGame()" id ="status">GUESS Number not Loaded yet!</button>
+                <input id="number" type="text">
+            <div class="hint">
+                <div class="hint-text">
+                    <p id="game-hint">Hint : Press the Start button to begin!</p>
+                    <p id="lguess">Last Guesses : </p>
+                    <p id="count">Number of tries : 0</p>
+                </div>
+                <div class="reveal-button">
+                    <button id="reveal" onclick="revealGame()">Reveal Number</button>
+                </div>
+            </div>
+            
+            </div>
+
+            <div class="buttons">
+                <div class="start-buttons">
+                    <button onclick="startGame()" id="start">Start</button>
+                    <!-- <button id="restart">Re-Start</button> -->
+                </div>
+                <div class="try-button">
+                <button id="try" onclick="tryGame()">Enter</button>
+                </div>
+                <!-- <div class="reveal-button">
+                    <button id="reveal" onclick="revealGame()">Reveal Number</button>
+                </div> -->
+
+            </div>
+
+
+
+
+
+
+        </div>
+ <script src="script.js"></script>   
+</body>
+</html>

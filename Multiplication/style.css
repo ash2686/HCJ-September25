@@ -1,0 +1,160 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ********************************************************************************* */
+
+
+.main-container .title{
+    height: 10%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    /* background-color: rgba(127, 255, 212,.5); */
+}
+
+/* ********************************************************************************** */
+
+.main-container .game-number{
+    height: 10%;
+    width: 90%;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(165, 42, 42,.5); */
+        /* border-bottom: 1px solid black; */
+}
+
+.game-number input{
+    width: 10%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 50%; */
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, .2);
+    font-weight: bolder;
+    border: none;
+}
+/* ********************************************************************************** */
+.main-container .display-area{
+    height: 65%;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(42, 110, 165, 0.5); */
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+.display-area .prev-table, .display-area .current-table, .display-area .next-table{
+    width: 33.33%;
+    height: 100%;
+    border: 1px solid black;
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+
+}
+
+.display-area .prev-table p, .display-area .current-table p, .display-area .next-table p{
+    width: 90%;
+    height: 10%;
+    /* border-bottom: 1px solid black; */
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-area .prev-table .prev-display, .display-area .current-table .current-display, .display-area .next-table .next-display{
+    width: 90%;
+    height: 90%;
+    /* background-color: red; */
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 0;
+}
+/* ********************************************************************************** */
+.main-container .game-buttons{
+    height: 15%;
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: rgba(42, 165, 77, 0.5); */
+    
+    /* padding: 0 2rem; */
+}
+
+.game-buttons .g-button{
+    width: 79%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-buttons .c-button{
+    width: 20%;
+    height: 100%;
+    /* border-left: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.g-button button,.c-button button{
+    width: 100%;
+    height: 90%;
+    background-color: transparent;
+    border-radius: 10px;
+    /* margin:0 1rem; */
+    box-shadow: 1px 1px 1px 1px rgb(0,0,0,.5);
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.g-button button:hover,.c-button button:hover{
+    background-color: rgba(118, 212, 241,.2);
+    box-shadow: 1px 1px 1px 1px black;
+
+}
+
+button:active{
+    color: black; 
+    background-color: black;
+    transform: translate(1px,2px);
+    border: none;
+}
