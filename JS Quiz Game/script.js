@@ -170,6 +170,12 @@ function nextQuestion(){
 
                 if(options[k].classList.contains("wrong"))
                options[k].classList.remove("wrong");
+
+                if(options[k].classList.contains("nope"))
+                  options[k].classList.remove("nope");
+
+                if(options[k].classList.contains("yayy"))
+                  options[k].classList.remove("yayy");
     }
  quesNo+=1;
  if(quesNo>14){
@@ -200,9 +206,11 @@ console.log("quesNo variable value is - " + quesNo);
                     }
                    if(options[i].textContent === gameQuestions[quesNo].answer){
                       options[i].classList.add("correct");
+                      options[i].classList.add("yayy");
                       score++
                    }else{
                     options[i].classList.add("wrong");
+                    options[i].classList.add("nope");
                     options[answerIndex].classList.add("correct");
                     score = score;
                    }
