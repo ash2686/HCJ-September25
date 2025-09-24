@@ -158,6 +158,8 @@ function startQuiz(){
 
 function nextQuestion(){
 
+  qHint.textContent = "Click for Hint";
+
   if(quesNo === 13){
       NQbutton.textContent="Last Question";
   }
@@ -251,7 +253,7 @@ function finalScreen(q,s){
   finalScore.classList.add("final-score");
   mainContainer.appendChild(finalScore);
   let finalTextTop = document.createElement("h1");
-  let finalTextMiddle = document.createElement("h1");
+  let finalTextMiddle = document.createElement("p");
   let finalTextBottom = document.createElement("h1")
 
   finalTextMiddle.classList.add("final-score-text");

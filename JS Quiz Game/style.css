@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=Caveat:wght@400..700&family=Condiment&family=Doto:wght@100..900&family=Rubik+Beastly&family=Trade+Winds&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Trade Winds", system-ui;
+    font-weight: 200;
+    color: rgb(81, 81, 81);
 }
 
 html,body{
     width: 100vw;
     height: 100vh;
+    background-color: whitesmoke;
 }
 
 .main-container{
@@ -67,9 +72,25 @@ html,body{
     justify-content: space-evenly;
     align-items: center;
     /* padding: 0 1rem; */
+    /* border: 1px solid black; */
+    
+}
+
+.game-header h1{
+    font-family: "Rubik Beastly", system-ui;
+    letter-spacing: 5px;
+    /* color: red; */
+    font-size: 2.5rem;
+    font-weight: 100;
+
 }
 .game-header p{
     text-align: center;
+    font-family: "Doto", sans-serif; 
+    font-weight: bolder;
+    color: black;
+    text-decoration: underline;
+
 }
 
 .quiz-header .quiz-score{
@@ -90,7 +111,7 @@ html,body{
 .quiz-score .score-circle{
     height: 8rem;
     width: 8rem;
-    border: 5px solid black;
+    border: 3px solid black;
     border-radius: 50%;
     display: flex;
     justify-content: space-evenly;
@@ -103,7 +124,8 @@ html,body{
     width: 100%;
     height: 15%;
     border: 1px solid black;
-   
+    font-size: .5rem;
+    letter-spacing: 15px;
     display: flex;
 
     align-items: center;
@@ -111,19 +133,25 @@ html,body{
     text-align: center;
     background-color: black;
     color: red;
-    font-weight: bolder;
+    padding-left: .7rem;
+    /* text-decoration:line-through; */
+    /* font-weight: bolder; */
 }
 
 .score-circle h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* padding: 1rem 0; */
+    /* background-color: orange; */
 }
 
 .score-circle h2 .score-text{
     font-size: .7rem;
     font-weight: bolder;
     color: green;
+    /* background-color: red; */
+    margin-top: -.5rem;
 }
 
 
@@ -150,7 +178,8 @@ html,body{
 .game-block .question-block{
     width: 100%;
     height: 25%;
-    border: 4px solid black;
+    border: 1px solid black;
+    
     border-radius: 5px;
     display:flex;
     flex-direction: column;
@@ -198,7 +227,7 @@ html,body{
 .answers{
     height: 100%;
     width: 50%;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -210,7 +239,7 @@ html,body{
 
 .answers:hover{
     /* background-color: rgba(192, 192, 192, 0.1); */
-    border: 3px solid green;
+    border: 2px solid black;
     /* box-shadow: inset 1px 1px 20px 1px rgba(255, 165, 0,.5); */
 }
 
@@ -228,7 +257,7 @@ html,body{
 }
 
 .question-hint #q-hint{
-    width: 50%;
+    width: 95%;
     height: 95%;
     background-color: transparent;
     border-radius: 5px;
@@ -254,30 +283,48 @@ html,body{
 }
 
 #next-question{
-    width: 50%;
+    width: 95%;
     height: 90%;
     background-color: transparent;
     border-radius: 5px;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 20px;
+    transition: 1s ease-in-out;
+}
+
+#next-question:hover{
+    letter-spacing: 2px;
+    box-shadow: inset 2px 2px 50px 1px green;
 }
 
 button:hover{
-    background-color: rgba(0, 0, 255, 0.5) !important;
+    border: 2px solid black;
+    box-shadow: none;
+    /* color: blue; */
+    letter-spacing: 5px;
 }
 
+
 button{
-    box-shadow: 1px 1px 1px 1px grey;
-    background-color: blue !important;
+    box-shadow: inset 2px 2px 50px 1px rgba(0, 0, 255,.5); 
+    border:none   
 }
 
 button:active{
-    transform: translate(2px,1px);
-    border: none;
+    /* transform: translate(1px,1px); */
+    border: 1px solid black;
     box-shadow: none;
 }
 
 .qhintbg{
-    background-color: rgba(255, 255, 0, 0.5) !important;
+        box-shadow: inset 1px 1px 25px 1px rgba(225, 255, 0, 0.7) !important;
+        border: none !important;
+        letter-spacing: 20px;
+        transition: 1s ease-in-out;
+}
+
+.qhintbg:hover{
+    letter-spacing: 2px;
 }
 
 .correct {
@@ -289,11 +336,7 @@ button:active{
     background-color: rgba(255, 0, 0, 0.5);
 }
 
-.final{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .start{
     width: 100vw;
@@ -301,7 +344,8 @@ button:active{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: grey;
+    /* background-color: grey; */
+    background-color: rgb(137, 137, 137);
     position: fixed;
     left:0;
     top:0;
@@ -310,35 +354,84 @@ button:active{
 
 .start-butt{
     background-color: transparent;
-    width: 25rem;
-    height: 8rem;
-    border-radius: 10px;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    /* box-shadow: none !important; */
+    border: 2px solid rgb(231, 231, 231);
+    color: rgb(231, 231, 231);
+    font-size: 2.5rem;
+    transition: 2s;
+    border: blue;
+    color: blue;
+
+}
+
+.start-butt:hover{
+    box-shadow: inset 2px 2px 100px 5px white;
+    color: white;
+    border: white;
+}
+
+.final{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     font-family: "Condiment", cursive;
+     background-color: black;
 
 }
 
 .final-score{
     width: 50rem;
     height: 50rem;
-    border: 10px solid black;
+    border: 3px solid white;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 5rem 0;
+    padding: 3rem 0;
+    font-family: "Condiment", cursive;
+    box-shadow: inset 2px 2px 100px 5px white, 2px 2px 100px 5px green ;
+}
+
+.final-score> :first-child{
+    color: green;
+    /* background-color: aqua; */
+}
+
+.final-score> h1:last-child{
+    color: red;
+    /* background-color: red; */
 }
 
 .final-score-text{
     font-size: 6rem;
     width: 100%;
     height: 15%;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid white;
+    font-family: "Condiment", cursive;
+    padding-top: 1rem;
+
 }
 
 .final-score h1{
     font-size: 5rem;
+        font-family: "Condiment", cursive;
+        /* background-color: red; */
+
+}
+
+.final-score p{
+    font-size: 2.5rem;
+    /* margin-top: 9.5rem; */
+    letter-spacing: 20px;
+        /* text-decoration: line-through; */
+        width: 100%;
+
 }
