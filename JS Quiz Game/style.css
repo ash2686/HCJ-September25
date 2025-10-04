@@ -86,11 +86,10 @@ html,body{
 }
 .game-header p{
     text-align: center;
-    font-family: "Doto", sans-serif; 
     font-weight: bolder;
     color: black;
     text-decoration: underline;
-
+    font-family: "Trade Winds", system-ui;
 }
 
 .quiz-header .quiz-score{
@@ -111,7 +110,7 @@ html,body{
 .quiz-score .score-circle{
     height: 8rem;
     width: 8rem;
-    border: 3px solid black;
+    border: 5px solid black;
     border-radius: 50%;
     display: flex;
     justify-content: space-evenly;
@@ -132,7 +131,7 @@ html,body{
     justify-content: center;
     text-align: center;
     background-color: black;
-    color: red;
+    color: white;
     padding-left: .7rem;
     /* text-decoration:line-through; */
     /* font-weight: bolder; */
@@ -142,14 +141,13 @@ html,body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 1rem 0; */
-    /* background-color: orange; */
+
 }
 
 .score-circle h2 .score-text{
     font-size: .7rem;
     font-weight: bolder;
-    color: green;
+    color: black;
     /* background-color: red; */
     margin-top: -.5rem;
 }
@@ -243,6 +241,7 @@ html,body{
 .answers:hover{
     /* background-color: rgba(192, 192, 192, 0.1); */
     border: 2px solid black;
+    cursor: pointer;
     /* box-shadow: inset 1px 1px 20px 1px rgba(255, 165, 0,.5); */
 }
 
@@ -273,6 +272,20 @@ html,body{
     font-weight: bolder;
 }
 
+.qhintbg{
+        background-color: rgba(225, 255, 0, 0.7) !important;
+        border: none !important;
+        letter-spacing: 20px;
+        transition: 1s ease-in-out;
+        cursor: pointer;
+}
+
+.qhintbg:hover{
+    border: 1px solid black;
+    box-shadow: inset 1px 1px 20px 1px rgba(225, 255, 0, 0.7) !important;
+}
+
+
 
 .main-container .game-buttons{
     width: 100%;
@@ -292,12 +305,14 @@ html,body{
     border-radius: 5px;
     font-size: 1.5rem;
     letter-spacing: 20px;
-    transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
+    /* box-shadow: none; */
 }
 
 #next-question:hover{
-    letter-spacing: 2px;
-    box-shadow: inset 2px 2px 50px 1px green;
+    /* letter-spacing: 2px; */
+    box-shadow: inset 2px 2px 100px 20px rgba(0, 0, 255,.5);
+    border: 1px solid black;
 }
 
 button:hover{
@@ -309,8 +324,9 @@ button:hover{
 
 
 button{
-    box-shadow: inset 2px 2px 50px 1px rgba(0, 0, 255,.5); 
-    border:none   
+    box-shadow: inset 2px 2px 100px 10px rgba(0, 0, 255,.5); 
+    border:none;
+    cursor: pointer;
 }
 
 button:active{
@@ -319,16 +335,6 @@ button:active{
     box-shadow: none;
 }
 
-.qhintbg{
-        box-shadow: inset 1px 1px 25px 1px rgba(225, 255, 0, 0.7) !important;
-        border: none !important;
-        letter-spacing: 20px;
-        transition: 1s ease-in-out;
-}
-
-.qhintbg:hover{
-    letter-spacing: 2px;
-}
 
 .correct {
   background-color: rgba(0, 128, 0, 0.5);
@@ -348,7 +354,7 @@ button:active{
     justify-content: center;
     align-items: center;
     /* background-color: grey; */
-    background-color: rgb(137, 137, 137);
+    background-color: rgb(0, 0, 0);
     position: fixed;
     left:0;
     top:0;
@@ -357,8 +363,8 @@ button:active{
 
 .start-butt{
     background-color: transparent;
-    width: 20rem;
-    height: 20rem;
+    width: 40rem;
+    height: 40rem;
     border-radius: 50%;
     /* box-shadow: none !important; */
     border: 2px solid rgb(231, 231, 231);
@@ -366,14 +372,16 @@ button:active{
     font-size: 2.5rem;
     transition: 2s;
     border: blue;
-    color: blue;
+    color: white;
 
 }
 
 .start-butt:hover{
     box-shadow: inset 2px 2px 100px 5px white;
-    color: white;
+    
     border: white;
+    color: blue;
+
 }
 
 .final{
@@ -381,13 +389,16 @@ button:active{
     justify-content: center;
     align-items: center;
      font-family: "Condiment", cursive;
-     background-color: black;
+     background-color: rgb(0, 0, 0);
+     width: 100vw;
+     height: 100vh;
+     z-index: 324334;
 
 }
 
 .final-score{
-    width: 50rem;
-    height: 50rem;
+    width: 40rem;
+    height: 40rem;
     border: 3px solid white;
     border-radius: 50%;
     display: flex;
@@ -396,7 +407,8 @@ button:active{
     align-items: center;
     padding: 3rem 0;
     font-family: "Condiment", cursive;
-    box-shadow: inset 2px 2px 100px 5px white, 2px 2px 100px 5px green ;
+    box-shadow: inset 2px 2px 50px 5px white;
+    cursor: pointer;
 }
 
 .final-score> :first-child{
@@ -456,22 +468,45 @@ animation-name: nope;
 }
 
 .yayy{
-    animation: yayy .5s ease-in-out 1;
+    animation: yayy .3s ease 3;
     border:none;
     outline: 1px solid black;
 }
 
 @keyframes yayy {
-    30%{transform: scale(1.1);}
-    70%{transform: rotate(-2deg)}
-    75%{transform: rotate(2deg)}
-    80%{transform: rotate(-2deg)}
-    85%{transform: rotate(2deg)}
-    90%{transform: rotate(-2deg)}
-    95%{transform: rotate(2deg)}
+    
+    25%{
+        /* transform: scale(.8); */
+        background-color: white;
+    }
+    50%{
+        /* transform: scale(.6); */
+    background-color: rgba(0, 128, 0, 0.5);
+    }
+    50%{
+        /* transform: scale(.8); */
+    background-color: white;
+    }
     100%{
-        transform: scale(1);
-        transform: rotate(0);
+        /* transform: scale(1); */
+    background-color: rgba(0, 128, 0, 0.5);
     }
     
+    
 }
+
+/* .begin-game{
+    animation: game ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 7s;
+    animation-fill-mode:none;
+    
+
+}
+
+@keyframes game {
+    0%{box-shadow: inset 2px 2px 100px 1px red}
+    50%{box-shadow: inset 2px 2px 100px 1px blue}
+    100%{box-shadow: inset 2px 2px 100px 1px green}
+    
+} */

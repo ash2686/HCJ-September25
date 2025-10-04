@@ -115,6 +115,7 @@ let options = document.getElementsByClassName("answers");
 let qHint = document.getElementById("q-hint");
 let gameScore = document.getElementById("game-score");
 let QN = document.getElementById("question-number");
+let scoreBoard = document.getElementsByClassName("score-circle")[0];
 let quesNo = 0;
 let score = 0;
 let answerIndex;
@@ -128,7 +129,8 @@ window.onload = function(){
 
   let gameButton = document.createElement("button");
   gameButton.textContent = "Start Quiz";
-  gameButton.classList.add("start-butt")
+  gameButton.classList.add("start-butt");
+  gameButton.classList.add("begin-game");
   game.appendChild(gameButton);
 
   gameButton.onclick = ()=>{
@@ -158,10 +160,16 @@ function startQuiz(){
 
 function nextQuestion(){
 
-  qHint.textContent = "Click for Hint";
+  qHint.textContent = "Click - for - Hint";
+  qHint.disabled = false;
+  scoreBoard.style.backgroundColor = "transparent";
 
   if(quesNo === 13){
       NQbutton.textContent="Last Question";
+  }
+
+  if(quesNo === 14){
+    NQbutton.textContent="ScoreCard"
   }
   
    for(let k=0;k<options.length;k++){
@@ -190,13 +198,12 @@ console.log("quesNo variable value is - " + quesNo);
     for(let i=0;i<options.length;i++){
             
             options[i].addEventListener("click", () => {    
-                NQbutton.disabled = false;            
-                // if(options[i].classList.contains("selected")){
-                //   options[i].classList.remove("selected");                  
-                // }else{
-                //       options[i].classList.add("selected"); 
-                // }
-
+                NQbutton.disabled = false;  
+                qHint.disabled = true;          
+          
+                    if(quesNo === 14){
+                      NQbutton.textContent = "ScoreCard!";
+                    }
                     for( let k =0;k<options.length;k++){
                        if(options[k].textContent === gameQuestions[quesNo].answer){
                           answerIndex = k;
@@ -207,11 +214,22 @@ console.log("quesNo variable value is - " + quesNo);
                    if(options[i].textContent === gameQuestions[quesNo].answer){
                       options[i].classList.add("correct");
                       options[i].classList.add("yayy");
-                      score++
+                      scoreBoard.style.backgroundColor = "rgba(0, 128, 0, 0.8)";
+                      setTimeout(()=>{
+                        scoreBoard.style.backgroundColor = "rgba(0, 128, 0, 0.8)";
+                        scoreBoard.style.backgroundColor = "transparent";
+                      },1000);
+                      
+                      score++;
                    }else{
                     options[i].classList.add("wrong");
                     options[i].classList.add("nope");
                     options[answerIndex].classList.add("correct");
+                    scoreBoard.style.backgroundColor = "rgba(255, 0, 0, 0.8)";
+                    setTimeout(()=>{
+                       scoreBoard.style.backgroundColor = "transparent";
+                    },1000)
+                    
                     score = score;
                    }
                  if(options[i].classList.contains("correct")){
@@ -234,12 +252,12 @@ function loadQuestion(questionNumber){
     } 
 
   qHint.onclick = ()=>{
-    if (qHint.textContent === "Click for Hint") {
+    if (qHint.textContent === "Click - for - Hint") {
     qHint.classList.remove("qhintbg");
     qHint.style.fontSize = "1.2rem";
     qHint.textContent = gameQuestions[questionNumber].hint;
   } else {
-    qHint.textContent = "Click for Hint";
+    qHint.textContent = "Click - for - Hint";
     qHint.classList.add("qhintbg");
     qHint.style.fontSize = "1.2rem";
   }
@@ -254,12 +272,15 @@ NQbutton.disabled = true;
 }
 
 function finalScreen(q,s){
-  mainContainer.innerHTML = "";
+  mainContainer.remove();
   // mainContainer.style.backgroundImage ="linear-gradient(to right, red,blue,green,yellow,orange)";
-  mainContainer.classList.add("final");
+  let finalScreen = document.createElement("div");
+
+  finalScreen.classList.add("final");
+  document.body.appendChild(finalScreen);
   let finalScore = document.createElement("div");
   finalScore.classList.add("final-score");
-  mainContainer.appendChild(finalScore);
+  finalScreen.appendChild(finalScore);
   let finalTextTop = document.createElement("h1");
   let finalTextMiddle = document.createElement("p");
   let finalTextBottom = document.createElement("h1")
@@ -272,6 +293,14 @@ function finalScreen(q,s){
   finalTextTop.textContent = `${s} Correct`;
   finalTextBottom.textContent = `${q} Questions`;
   finalTextMiddle.textContent = "FINAL SCORE"
-  mainContainer.style.fontSize = "5rem";
+  finalScreen.style.fontSize = "5rem";
   // mainContainer.textContent = `You got ${s} correct of ${q} questions`;
+
+  finalScore.onclick = ()=>{
+    // window.onload();
+    finalScreen.remove();
+    document.body.appendChild(mainContainer);
+    window.onload();
+    startQuiz();
+  }
 }
